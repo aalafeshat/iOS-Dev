@@ -20,7 +20,23 @@ require_relative './mendix_utils'
 
 deployment_target = "15.5"
 platform :ios, deployment_target
-use_modular_headers!
+def common_pods
+  config = use_native_modules!
+  use_react_native!(
+    :path => config[:reactNativePath],
+    :app_path => "#{Pod::Config.instance.installation_root}/.."
+  )
+
+  # your other pods...
+  pod 'IQKeyboardManager'
+  pod 'SSZipArchive'
+
+  # ✅ add these lines
+  pod 'FirebaseCoreInternal', :modular_headers => true
+  pod 'FirebaseCore', :modular_headers => true
+  pod 'GoogleUtilities', :modular_headers => true
+end
+
 prepare_react_native_project!
 generate_mendix_delegate
 
