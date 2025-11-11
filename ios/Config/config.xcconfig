@@ -1,0 +1,9 @@
+BUNDLE_DISPLAY_NAME = Al Baraka SA Banking App
+BUNDLE_IDENTIFIER = com.ablmobilebankingsolution.sa.mobile
+
+PRODUCT_BUNDLE_IDENTIFIER = $(BUNDLE_IDENTIFIER)$(BUNDLE_IDENTIFIER_APPEND)
+
+RUNTIME_URL = https:\/\/mbamendixproxy-uat.albarakaonline.co.za
+
+PRODUCT_NAME = ABLMobileBankin
+HERMES_ENABLED = YES
